@@ -16,19 +16,20 @@ db = [
 
 username = input("请输入账号：")
 password = input("请输入密码：")
-j = 1
+count = 1
 for i in db:
     if username == i.get(username):
         if password != i.get(password):
             i.update(password=password)
             break
-    elif j<len(db):
-        j = j+1
     else:
-        y = input("该账户不存在，是否注册(y/n):")
-        if y == 'y':
-            db.append({"username":username,"password":password})
-            break
+        if count == len(db):
+            y = input("该账户不存在，是否注册(y/n):")
+            if y == 'y':
+                db.append({"username":username,"password":password})
+                break
+            else:
+                break
         else:
-            break
+            count = count +1
 print(db)
