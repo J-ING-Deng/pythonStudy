@@ -30,6 +30,5 @@ for i in db:
                 break
             else:
                 break
-        else:
-            count = count + 1
+    count = count + 1
 print(db)
